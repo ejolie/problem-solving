@@ -1,0 +1,9 @@
+# Updated .gitignore file
+
+*
+
+!*.cpp
+!*.md
+!.gitignore
+
+!BOJ
