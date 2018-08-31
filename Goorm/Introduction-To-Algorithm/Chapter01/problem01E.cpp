@@ -20,7 +20,7 @@ void solve(int data[], int n, int p, int q) {
 
 int main() {
   int n, p, q;
-  int * data[];
+  int * data;
 
   scanf("%d %d %d", &n, &p, &q);
   data = new int[n];
