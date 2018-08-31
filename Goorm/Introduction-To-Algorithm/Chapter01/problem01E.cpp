@@ -26,7 +26,7 @@ int main() {
   data = new int[n];
 
   for (int i = 0 ; i < n ; i++) {
-    scanf("%d", data[i]);
+    scanf("%d", &data[i]);
   }
 
   solve(data, n, p, q);
