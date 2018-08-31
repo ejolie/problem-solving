@@ -45,5 +45,6 @@ int main() {
     printf("%d", data[i]);
   }
 
+  delete[] data;
   return 0;
 }
