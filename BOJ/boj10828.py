@@ -19,9 +19,9 @@ class Stack():
     def top(self):
         return -1 if self.empty() else self.myList[-1]
 
-n = int(input())
+n = int(sys.stdin.readline())
 s = Stack()
-for i in range(n):
+for _ in range(n):
     cmd = list(sys.stdin.readline().split())
     if cmd[0] == 'push':
         s.push(int(cmd[1]))
