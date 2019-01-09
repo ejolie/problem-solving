@@ -7,5 +7,7 @@
 ### [Goorm EDU 알고리즘 문제해결기법 입문](Goorm/Introduction-To-Algorithm)
 
 ## 3. [Hackerrank](Hackerrank)
+### [Interview-Preparation-Kit](Hackerrank/Interview-Preparation-Kit)
+### [Python](Hackerrank/Python)
 
 ## 4. [SWEA](SWEA)
