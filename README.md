@@ -5,7 +5,7 @@
 
 ## 2. [Hackerrank](Hackerrank)
 ### 1) [Interview-Preparation-Kit](Hackerrank/Interview-Preparation-Kit)
-### 2) [Python](Hackerrank/Python)
+### 2) [Problem-Solving](Hackerrank/Problem-Solving)
 ### 3) [30-Days-of-Code](Hackerrank/30-Days-of-Code)
 ### 4) [10-Days-of-JavaScript](Hackerrank/10-Days-of-JavaScript)
 
