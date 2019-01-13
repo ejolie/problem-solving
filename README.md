@@ -14,3 +14,4 @@
 
 ## 4. [SWEA](SWEA)
 ### 1) [Difficulty 1](SWEA/D1)
+### 2) [Difficulty 2](SWEA/D2)
