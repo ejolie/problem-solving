@@ -11,9 +11,9 @@ def binary_search(p, c):
         if c == m:
             break
         elif c < m: 
-            r = m
+            r = m - 1
         else: 
-            l = m
+            l = m + 1
         cnt += 1
     return cnt
 
