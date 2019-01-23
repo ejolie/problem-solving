@@ -10,4 +10,3 @@ for t in range(1, tc+1):
     s2 = input()
     result = 1 if s1 in s2 else 0
     print(f'#{t} {result}')
-        
