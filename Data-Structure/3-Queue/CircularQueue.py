@@ -25,7 +25,6 @@ class CircularQueue:
         else:
             self.front = (self.front + 1) % self.size()
             
-
     def size(self):
         return len(self.queue)
 
