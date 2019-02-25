@@ -1,14 +1,13 @@
 class StackByPointer:
-    MAX_SIZE = 1 << 2**30  # 10억
-    def __init__(self):
+    def __init__(self, N):
         self.top = -1
         self.capacity = 0
-        self.items = [0] * StackByPointer.MAX_SIZE
+        self.stack = [0] * N
 
     def push(self, item):
         self.top += 1
         self.capacity += 1
-        self.items[self.top] = item
+        self.stack[self.top] = item
 
     def pop(self):
         if self.isEmpty():
@@ -16,10 +15,10 @@ class StackByPointer:
         tmp = self.top
         self.top -= 1
         self.capacity -= 1
-        return self.items[tmp]
+        return self.stack[tmp]
 
     def peek(self):
-        return self.items[self.top]
+        return self.stack[self.top]
 
     def isEmpty(self):
         return self.capacity == 0
