@@ -18,3 +18,5 @@
 ### 3) [Difficulty 3](SWEA/d3)
 ### 4) [Difficulty 4](SWEA/D4)
 ### 5) [Difficulty 5](SWEA/D5)
+
+## 5. Data Structure
