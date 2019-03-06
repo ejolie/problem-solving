@@ -1,18 +1,8 @@
 # SW Expert Academy
 
-## I. 문제 난이도별 순서
-
-### 1. 1단계
-2027
-2047
-2043
-1938
-2058
-1936
-2046
-1545
-2017
-2025
-2050
-1933
-2063
+## 1. [Difficulty 1](SWEA/D1)
+## 2. [Difficulty 2](SWEA/D2)
+## 3. [Difficulty 3](SWEA/D3)
+## 4. [Difficulty 4](SWEA/D4)
+## 5. [Difficulty 5](SWEA/D5)
+## 6. [Difficulty 6](SWEA/D6)
