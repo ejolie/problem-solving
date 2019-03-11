@@ -1,5 +1,5 @@
 '''
-1979. 어디에 단어가 들어갈 수 있을까  
+1979. 어디에 단어가 들어갈 수 있을까 (D2)
 
 N X N 크기의 단어 퍼즐을 만들려고 한다. 
 입력으로 단어 퍼즐의 모양이 주어진다.
@@ -9,27 +9,28 @@ N X N 크기의 단어 퍼즐을 만들려고 한다.
 2. K는 2 이상 N 이하의 정수이다. (2 ≤ K ≤ N)
 '''
 tc = int(input())
-for t in range(1, tc+1):
-  n, k = map(int, input().split())
-  puzzle = [list(map(int, input().split())) for _ in range(n)]
-  total = 0
+for t in range(1, tc + 1):
+  N, K = map(int, input().split())
+  puzz = [[] * N for _ in range(N)]
+  for i in range(N):
+    puzz[i] = [int(n) for n in input().split()]
 
-  # 가로 확인 
-  for i in range(n):
-    verti = 0
-    cnt = 0
-    for j in range(puzzle[i]):
-      if puzzle[i][j]:
-        cnt += 1
-        verty += cnt
-      else:
-        verti = 0
-      '''
-  1 0 1 1 1
-
-전체 연속 개수: 1 0
-실시간 카운트 : 1 0
-
-'''
-  # 세로 확인 
-  print(f'#{t} {cnt}')
+  ans = 0
+  for i in range(N):
+    rowcnt = colcnt = 0
+    for j in range(N):
+      if puzz[i][j] == 1:
+        rowcnt += 1
+      elif puzz[i][j] == 0:
+        if rowcnt == K: ans += 1
+        rowcnt = 0
+      if puzz[j][i] == 1:
+        colcnt += 1
+      elif puzz[j][i] == 0:
+        if colcnt == K: ans += 1
+        colcnt = 0
+    if rowcnt == K:
+      ans += 1
+    if colcnt == K:
+      ans += 1
+  print('#%d %d' % (t, ans))
