@@ -1,5 +1,5 @@
 '''
-swea1974. 스도쿠 검증
+swea1974. 스도쿠 검증 (D2)
 '''
 tc = int(input())
 for t in range(1, tc+1):
