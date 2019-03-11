@@ -1,5 +1,5 @@
 '''
-swea4875. 미로
+swea4875. 미로 (D2)
 '''
 def dfs(x, y):
 	visited[x][y] = 1
