@@ -1,47 +1,37 @@
-import queue
+'''
+boj1260: DFS와 BFS
+'''
+from sys import stdin
 
-def dfs(graph, v):
-    global visited
-    global answer
-    stack = []
-    stack.append(v)
-    while stack != []:
-        w = stack.pop()
-        if visited[w] == 0:
-            visited[w] = 1
-            answer += str(w) + ' '
-        for i in range(len(graph)-1, -1, -1):
-            if graph[w][i] == 1 and visited[i] == 0:
-                stack.append(i)
-        
-def bfs(path, v):
-    global visited
-    global answer
-    q = queue.Queue();
-    q.put(v)
-    while not q.empty():
-        w = q.get()
-        if visited[w] == 0:
-            answer += str(w) + ' '
-            visited[w] = 1
-        for i in range(len(graph)):
-            if graph[w][i] == 1 and visited[i] == 0:
-                q.put(i)
+def dfs(i):
+    s = [i]
+    visited = [0] * (N+1)
+    while s:
+        v = s.pop()
+        if not visited[v]:
+            visited[v] = 1
+            print(v, end=' ')
+            for w in sorted(G[v], reverse=True):
+                s.append(w)
 
-n, m, v = map(int, input().split())
-graph = [[0 for j in range(n+1)] for i in range(n+1)]
+def bfs(i):
+    q = [i]
+    visited = [0] * (N+1)
+    visited[i] = 1
+    while q:
+        v = q.pop(0)
+        print(v, end=' ')
+        for w in sorted(G[v]):
+            if not visited[w]:
+                visited[w] = 1
+                q.append(w)
 
-for i in range(int(m)):
-    x, y = map(int, input().split())
-    graph[x][y] = 1
-    graph[y][x] = 1
-
-answer = ''
-visited = [0 for i in range(n+1)]
-dfs(graph, v)
-print(answer)
-        
-answer = ''
-visited = [0 for i in range(n+1)]
-bfs(graph, v)
-print(answer)
+N, M, V = map(int, stdin.readline().split())
+G = [[] for _ in range(N+1)]
+for _ in range(M):
+    v, w = map(int, stdin.readline().split())
+    G[v].append(w)
+    G[w].append(v)
+dfs(V)
+print()
+bfs(V)
