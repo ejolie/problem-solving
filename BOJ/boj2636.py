@@ -9,5 +9,11 @@ boj2636. 치즈
 * 모두 녹기 한 시간 전에 남아있는 치즈의 칸의 개수
 '''
 from sys import stdin
-h, w = map(int, stdin.readline().split())
+
+H, W = map(int, stdin.readline().split())
+mat = [0] * (H+1)
+for i in range(H):
+    mat[i] = list(map(int, stdin.readline().split()))
+
+while True:
 
