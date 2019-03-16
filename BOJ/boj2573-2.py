@@ -9,7 +9,6 @@ def bfs(a, b):
 	while q != []:
 		cnt += 1
 		x, y = q.pop(0)
-		zeros = 0
 		for i in range(4):
 			nx = x + dx[i]
 			ny = y + dy[i]
@@ -17,13 +16,11 @@ def bfs(a, b):
 				continue
 			# Check around seas
 			if not mat[nx][ny]:
-				zeros += 1
+				around[x][y] += 1
 			# BFS
 			elif mat[nx][ny] and not visited[nx][ny]:
 				visited[nx][ny] = 1
 				q.append((nx, ny))
-		if zeros > 0:
-			around.append((x, y, zeros))
 	return cnt
 
 N, M = map(int, stdin.readline().split())
@@ -40,14 +37,14 @@ for i in range(N):
 		if mat[i][j]:
 			mounts.append((i, j))
 			len_m += 1
-
+            
 year = -1
 is_two = False
 while True:
 	year += 1
 	# Check number of mountains
-	around = []
 	visited = [[0] * M for _ in range(N)]
+	around = [[0] * M for _ in range(N)]
 	for m in mounts:
 		x, y = m
 		if not visited[x][y] and mat[x][y]:
@@ -60,10 +57,10 @@ while True:
 		break
 
 	# Melt mountains every year
-	for a in around:
-		x, y, zeros = a
+	for m in mounts:
+		x, y = m
 		if mat[x][y]:
-			mat[x][y] -= zeros
+			mat[x][y] -= around[x][y]
 			if mat[x][y] <= 0:
 				mat[x][y] = 0
 				len_m -= 1
