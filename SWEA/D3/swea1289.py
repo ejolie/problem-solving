@@ -11,3 +11,12 @@ swea1289. 원재의 메모리 복구하기
 '''
 tc = int(input())
 for t in range(1, tc+1):
+	st = list(input())
+	tmp = ['0'] * len(st)
+	cnt = 0
+	for i in range(len(st)):
+		if st[i] != tmp[i]:
+			cnt += 1
+			for j in range(i, len(st)):
+				tmp[j] = st[i]
+	print('#{} {}'.format(t, cnt))
