@@ -21,6 +21,5 @@ def bfs(A):
 
 A, B = map(int, stdin.readline().rstrip().split())
 N = 1000001
-mat = [0] * N
 visited = [0] * N
 print('%d' % bfs(A))
