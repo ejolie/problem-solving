@@ -10,10 +10,47 @@ boj2636. 치즈
 '''
 from sys import stdin
 
+def bfs(X, Y):
+	q = [(X, Y)]
+	cnt = 0
+	while q != []:
+		cnt += 1
+		x, y = q.pop(0)
+		zeros = 0
+		for i in range(4):
+			nx = x + dx[i]
+			ny = y + dy[i]
+			if nx < 0 or nx > H-1 or ny < 0 or ny > W-1:
+				continue
+			if not mat[nx][ny]:
+				zeros += 1
+			if not visited[nx][ny] and mat[nx][ny]:
+				q.append((nx, ny))
+		if zeros:
+			around.append((x, y, around))
+	return cnt
+
 H, W = map(int, stdin.readline().split())
 mat = [0] * (H+1)
+C = []
 for i in range(H):
     mat[i] = list(map(int, stdin.readline().split()))
+    for j in range(1, W):
+    	if mat[i][j]:
+    		C.append((i, j))
 
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+hour = -1
+is_melted = False
 while True:
-
+	hour += 1
+	visited = [[0] * W for _ in range(H)]
+	around = []
+	num_of_C = 0
+	for c in C:
+		x, y = c
+		if not visited[x][y]:
+			visited[x][y] = 1
+			num_of_C += 1
+			num_of_C += bfs(x, y)
