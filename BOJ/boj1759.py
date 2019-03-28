@@ -1,6 +1,6 @@
 '''
 boj1759. 암호 만들기
-Backtracking
+Backtracking 
 조합, 부분 집합
 
 input: C개의 문자들
@@ -12,14 +12,17 @@ output: 가능성 있는 암호 사전식으로 모두 출력
 a t c i s w
 a c i s t w
 '''
-from sys import stdin
+def solve(v, cnt, pw, con, vow):
+	if cnt == L:
+		if vow >= 1 and con >= 2:
+			print(''.join(pw))
+		return
+	for i in range(v, C):
+		if chars[i] in 'aeiou':
+			solve(i + 1, cnt + 1, pw + chars[i], con, vow + 1)
+		else:
+			solve(i + 1, cnt + 1, pw + chars[i], con + 1, vow)
 
-L, C = map(int, stdin.readline().rstrip().split())
-chars = stdin.readline().rstrip().split()
-vowels = {}
-conns = {}
-for c in chars:
-	if c in 'aeiou':
-		vowels.add(c)
-	else: conns.add(c)
-
+L, C = map(int, input().split())
+chars = sorted(input().split())
+solve(0, 0, '', 0, 0)
