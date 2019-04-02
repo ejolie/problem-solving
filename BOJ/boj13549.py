@@ -1,11 +1,13 @@
 '''
 boj13549. 숨바꼭질 3
 '''
+from collections import deque
 def bfs(v):
 	visited[A] = True
-	q = [(A, 0)]
-	while q != []:
-		x, cnt = q.pop(0)
+	q = deque()
+	q.append((A, 0))
+	while q:
+		x, cnt = q.popleft()
 		if x == B:
 			return cnt
 		if 0 <= 2*x < N and not visited[2*x]:
