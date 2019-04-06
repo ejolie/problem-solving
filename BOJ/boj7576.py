@@ -1,55 +1,50 @@
 '''
 boj7576. 토마토
-'''
-from sys import stdin
 
-def bfs(x, y):
+- 며칠이 지나면 토마토가 다 익게 되는지, 최소 일수
+  모든 토마토가 처음부터 익은 상태 : 0 출력
+  모두 익지 못하는 상황 : -1 출력
+- 1: 익은 토마토, 0: 익지 않은 토마토, -1: 토마토 X
+- 하루가 지나면, 익은 토마토에 인접한 토마토들은 익게 된다
+'''
+from collections import deque
+W, H = map(int, input().split())
+box = [0] * H
+total_box = W * H
+total_tomato = 0
+tomatoes = deque()
+visited = [[False] * W for _ in range(H)]
+for i in range(H):
+    box[i] = list(map(int, input().split()))
+    for j in range(W):
+        if box[i][j] == -1:
+            total_box -= 1
+        elif box[i][j] == 1:
+            total_tomato += 1
+            tomatoes.append((i, j, 0))
+            visited[i][j] = True
+if total_box == total_tomato:
+    print(0)
+else:
     dx = [-1, 0, 1, 0]
     dy = [0, 1, 0, -1]
-    queue = [(x, y, 0)]
-    visited[x][y] = 1
-    cnt = 0
-    while queue != []:
-        cnt += 1
-        cx, cy, day = queue.pop(0)
+    maxday = 0
+    while tomatoes:
+        x, y, day = tomatoes.popleft()
+        if day > maxday:
+            maxday = day
         for i in range(4):
-            nx = cx + dx[i]
-            ny = cy + dy[i]
-            if nx < 0 or nx > N-1 or ny < 0 or ny > M-1:
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx < 0 or nx > H-1 or ny < 0 or ny > W-1:
                 continue
-            if box[nx][ny] == 0 and not visited[nx][ny]:
+            if not box[nx][ny] and not visited[nx][ny]:
                 box[nx][ny] = 1
-                visited[nx][ny] = 1
-                queue.append((nx, ny, day + 1))
-        print('> {}번째 날'.format(day+1))
-        for b in box:
-            print(b)
-        print()
+                total_tomato += 1
+                tomatoes.append((nx, ny, day + 1))
+                visited[nx][ny] = True
+    print(maxday if total_box == total_tomato else -1)
 
-    return day, cnt
 
-M, N = map(int, stdin.readline().rstrip().split())
-box = [0] * N
-loc = []
-tomatoes = M * N
-for i in range(N):
-    box[i] = list(map(int, stdin.readline().rstrip().split()))
-    for j in range(M):
-        if box[i][j] == 1:
-            loc.append((i, j))
-        if box[i][j] == -1:
-            tomatoes -= 1
-print('# loc:',loc)
-print('# start tomatoes:', tomatoes)
-days = 0
-visited = [[0] * M for _ in range(N)]
-for q in loc:
-    x, y = q[0], q[1]
-    if not visited[x][y]:
-        print('>>> not visited: {},{}'.format(x, y))
-        day, cnt = bfs(x, y)
-        print('>> day: {}, cnt: {}'.format(day, cnt))
-        days += day
-        tomatoes -= cnt
-print('# finish tomatoes:', tomatoes)
-print(-1 if tomatoes > 0 else days)
+
+
