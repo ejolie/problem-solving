@@ -8,6 +8,11 @@ swea5189. 전자카트 (D3)
 
 1 - 2 - 3 - 1
 1 - 3 - 2 - 1
+
+  0 1 2
+0
+1
+2
 '''
 tc = int(input())
 for t in range(1, tc+1):
@@ -15,3 +20,8 @@ for t in range(1, tc+1):
     G = [0] * N
     for i in range(N):
         G[i] = list(map(int, input().split()))
+
+    visited = [0] * N
+    visited[0] = 1
+    x = 0 # 시작점
+    while y != 0: # 도착점
