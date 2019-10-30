@@ -1,25 +1,26 @@
 '''
 boj1697. 숨바꼭질
 '''
-from sys import stdin
-def bfs(A):
-	visited[A] = 1
-	q = [(A, 0)]
-	while q != []:
-		x, cnt = q.pop(0)
+from collections import deque
+def bfs(v):
+	visited[v] = True
+	q = deque()
+	q.append((v, 0))
+	while q:
+		x, cnt = q.popleft()
 		if x == B:
 			return cnt
 		if 0 <= x-1 < N and not visited[x-1]:
-			visited[x-1] = 1
+			visited[x-1] = True
 			q.append((x-1, cnt+1))
 		if 0 <= x+1 < N and not visited[x+1]:
-			visited[x+1] = 1
+			visited[x+1] = True
 			q.append((x+1, cnt+1))
 		if 0 <= 2*x < N and not visited[2*x]:
-			visited[2*x] = 1
+			visited[2*x] = True
 			q.append((2*x, cnt+1))
 
-A, B = map(int, stdin.readline().rstrip().split())
+A, B = map(int, input().split())
 N = 100001
-visited = [0] * N
+visited = [False] * N
 print('%d' % bfs(A))

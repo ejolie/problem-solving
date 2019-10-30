@@ -1,5 +1,10 @@
 from Stack import Stack
 
+def matches(open, close):
+    opens = '([{'
+    closers = ')]}'
+    return opens.index(open) == closers.index(close)
+
 def parGeneralChecker(string):
     s = Stack()
     is_valid = True
@@ -20,10 +25,6 @@ def parGeneralChecker(string):
         return True
     return False
 
-def matches(open, close):
-    opens = '([{'
-    closers = ')]}'
-    return opens.index(open) == closers.index(close)
-
 print(parGeneralChecker('{{([][])}()}'))
 print(parGeneralChecker('[{()]'))
+

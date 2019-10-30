@@ -3,9 +3,9 @@ boj13549. 숨바꼭질 3
 '''
 from collections import deque
 def bfs(v):
-	visited[A] = True
+	visited[v] = True
 	q = deque()
-	q.append((A, 0))
+	q.append((v, 0))
 	while q:
 		x, cnt = q.popleft()
 		if x == B:
