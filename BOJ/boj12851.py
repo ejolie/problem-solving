@@ -24,6 +24,7 @@ def bfs(v):
 			elif check[u][1] > 0 and check[u][0] == check[x][0] + 1:	# visited
 				check[u][1] += check[x][1]
 
+
 A, B = map(int, input().split())
 check = [[0, 0] for _ in range(100001)]
 bfs(A)
