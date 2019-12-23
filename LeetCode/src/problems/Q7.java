@@ -6,31 +6,34 @@ package src.problems;
 
 public class Q7 {
     public static void main(String[] args) {
-        int x = 2147483647;
-        System.out.println(reverse(x));
+        int x = -123;
+        System.out.println(reverse2(x));
     }
 
+    // 1. StringBuilder.reverse()
     public static int reverse(int x) {
-        boolean isNegative = false;
-        if (x < 0) {
-            isNegative = true;
-            x *= -1;
-        }
-        String str = Integer.toString(x);
-        StringBuffer buff = new StringBuffer();
-        buff.append(str);
-        String reversed = buff.reverse().toString();
+        StringBuilder sb = x < 0 ? new StringBuilder(String.valueOf(-x)).append("-")
+                : new StringBuilder(String.valueOf(x));
+        String reversed = sb.reverse().toString();
 
-        int answer = 0;
         try {
-            answer = Integer.parseInt(reversed);
-            if (isNegative) {
-                answer *= -1;
-            }
-        } catch (RuntimeException e) {
-            answer = 0;
+            return Integer.parseInt(reversed);
+        } catch (Exception e) {
+            return 0;
         }
-        return answer;
     }
 
+    // 2. Math Pop & Push
+    public static int reverse2(int x) {
+        long res = 0;
+        while (x != 0) {
+            res = res * 10 + x % 10;
+            x /= 10;
+        }
+
+        if (res < Integer.MIN_VALUE || res > Integer.MAX_VALUE) {
+            return 0;
+        }
+        return (int) res;
+    }
 }

@@ -4,35 +4,37 @@ package src.problems;
  * Easy
  */
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 public class Q9 {
     public static void main(String[] args) {
-        int x = -121;
+        int x = 121;
         System.out.println(isPalindrome(x));
     }
 
+    // 1. Without Integer -> String (cf. Q7)
     public static boolean isPalindrome(int x) {
         if (x < 0) {
             return false;
         }
-        if (x < 10) {
-            return true;
-        }
-        Deque<Integer> q = new ArrayDeque<>();
-        while (x > 0) {
-            q.add(x % 10);
+        int original = x;
+        int res = 0;
+        while (x != 0) {
+            res = res * 10 + x % 10;
             x /= 10;
         }
-        while (q.size() > 1) {
-            int first = q.pollFirst();
-            int last = q.pollLast();
-            if (first != last) {
+        return res == original;
+    }
+
+    // 2. Integer -> String
+    public static boolean isPalindrome2(int x) {
+        String str = String.valueOf(x);
+        int start = 0;
+        int end = str.length() - 1;
+
+        while (start < end) {
+            if (str.charAt(start++) != str.charAt(end--)) {
                 return false;
             }
         }
         return true;
     }
-
 }
