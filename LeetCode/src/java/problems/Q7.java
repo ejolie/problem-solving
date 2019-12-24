@@ -1,7 +1,6 @@
-package src.problems;
+package src.java.problems;
 /*
- * 7. Reverse Integer
- * Easy
+ * 7. Reverse Integer (Easy)
  */
 
 public class Q7 {

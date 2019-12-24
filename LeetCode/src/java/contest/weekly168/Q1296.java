@@ -1,7 +1,6 @@
-package src.contest.weekly168;
+package src.java.contest.weekly168;
 /*
- * 1296. Divide Array in Sets of K Consecutive Numbers Medium
- * Medium
+ * 1296. Divide Array in Sets of K Consecutive Numbers (Medium)
  */
 
 import java.util.Arrays;

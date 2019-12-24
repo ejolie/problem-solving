@@ -1,7 +1,6 @@
-package problems;
+package src.java.problems;
 /*
- * 13. Roman to Integer
- * Easy
+ * 13. Roman to Integer (Easy)
  */
 
 /*
@@ -17,8 +16,6 @@ package problems;
     XL, XC : 40, 90
     CD, CM : 400, 900
 */
-import java.util.Map;
-import java.util.HashMap;
 
 public class Q13 {
     public static void main(String[] args) {

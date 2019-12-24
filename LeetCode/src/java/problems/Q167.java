@@ -1,7 +1,6 @@
-package problems;
+package src.java.problems;
 /*
- * 167. Two Sum II - Input array is sorted
- * Easy
+ * 167. Two Sum II - Input array is sorted (Easy)
  */
 
 import java.util.Map;

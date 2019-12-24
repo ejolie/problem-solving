@@ -1,7 +1,6 @@
-package src.problems;
+package src.java.problems;
 /*
- * 1. Two Sum
- * Easy
+ * 1. Two Sum (Easy)
  */
 
 import java.util.HashMap;

@@ -1,7 +1,6 @@
-package src.contest.weekly168;
+package src.java.contest.weekly168;
 /*
- * 1297. Maximum Number of Occurrences of a Substring
- * Medium
+ * 1297. Maximum Number of Occurrences of a Substring (Medium)
  */
 
 public class Q1297 {

@@ -1,7 +1,6 @@
-package src.contest.weekly168;
+package src.java.contest.weekly168;
 /*
- * 1295. Find Numbers with Even Number of Digits
- * Easy
+ * 1295. Find Numbers with Even Number of Digits (Easy)
  */
 
 public class Q1295 {

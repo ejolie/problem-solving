@@ -1,7 +1,6 @@
-package problems;
+package src.java.problems;
 /*
- * 1108. Defanging an IP Address
- * Easy
+ * 1108. Defanging an IP Address (Easy)
  */
 
 public class Q1108 {

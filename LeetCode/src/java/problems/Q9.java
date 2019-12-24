@@ -1,7 +1,6 @@
-package src.problems;
+package src.java.problems;
 /*
- * 9. Palindrome Number
- * Easy
+ * 9. Palindrome Number (Easy)
  */
 
 public class Q9 {

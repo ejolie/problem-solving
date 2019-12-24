@@ -1,4 +1,4 @@
-package src.problems;
+package src.java.problems;
 
 public class ListNode {
     int val;
