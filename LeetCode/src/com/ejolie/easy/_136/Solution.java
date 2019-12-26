@@ -12,7 +12,7 @@ public class Solution {
         System.out.println(solution.singleNumber(nums));
     }
 
-    // 1. Arrays.sort() and Compare prev & next
+    // 1. Arrays.sort() and compare prev & next
     public int singleNumber(int[] nums) {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 1; i += 2) {

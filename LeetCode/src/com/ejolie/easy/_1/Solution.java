@@ -15,7 +15,7 @@ public class Solution {
         System.out.println(Arrays.toString(solution.twoSum(nums, target)));
     }
 
-     // 1. Brute Force: O(n^2)
+     // 1. Brute force: O(n^2)
     public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -27,7 +27,7 @@ public class Solution {
         return null;
     }
 
-    // 2. Two-pass Hash Table: O(n)
+    // 2. Two-pass hash table: O(n)
     public int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -42,7 +42,7 @@ public class Solution {
         return null;
     }
 
-    // 3. One-pass Hash Table: O(n)
+    // 3. One-pass hash table: O(n)
     public int[] twoSum3(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

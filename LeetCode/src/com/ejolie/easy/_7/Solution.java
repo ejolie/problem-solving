@@ -23,7 +23,7 @@ public class Solution {
         }
     }
 
-    // 2. Math Pop & Push
+    // 2. Math pop & push
     public int reverse2(int x) {
         long res = 0;
         while (x != 0) {
