@@ -6,11 +6,12 @@ package com.ejolie.easy._14;
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-//        String[] strs = {"flower", "flow", "flight"};
-        String[] strs = {"dog" ,"racecar", "car"};
-        System.out.println(solution.longestCommonPrefix(strs));
+        String[] strs = {"flower", "flow", "flight"};
+//        String[] strs = {"dog" ,"racecar", "car"};
+        System.out.println(solution.longestCommonPrefix3(strs));
     }
 
+    // TODO: Understanding other solutions
     // 0. Character by character matching
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) {
@@ -32,11 +33,16 @@ public class Solution {
     }
 
     public int findMinLength(String[] strs) {
-        int minlen = strs[0].length();
-        for (int i = 1; i < strs.length; i++) {
-            if (strs[i].length() < minlen) {
-                minlen = strs[i].length();
-            }
+//        int minlen = strs[0].length();
+//        for (int i = 1; i < strs.length; i++) {
+//            if (strs[i].length() < minlen) {
+//                minlen = strs[i].length();
+//            }
+//        }
+//        return minlen;
+        int minlen = Integer.MAX_VALUE;
+        for (String str : strs) {
+            minlen = Math.min(minlen, str.length());
         }
         return minlen;
     }
@@ -77,6 +83,66 @@ public class Solution {
     }
 
     // 3. Divide and conquer
+    public String longestCommonPrefix4(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        return longestCommonPrefix4(strs, 0, strs.length-1);
+    }
+
+    private String longestCommonPrefix4(String[] strs, int l, int r) {
+        if (l == r) {
+            return strs[l];
+        }
+
+        int mid = (l + r) / 2;
+        String lcpLeft = longestCommonPrefix4(strs, l, mid);
+        String lcpRight = longestCommonPrefix4(strs, mid + 1, r);
+        return commonPrefix(lcpLeft, lcpRight);
+    }
+
+    String commonPrefix(String left, String right) {
+        int min = Math.min(left.length(), right.length());
+        for (int i = 0; i < min; i++) {
+            if (left.charAt(i) != right.charAt(i)) {
+                return left.substring(0, i);
+            }
+        }
+        return left.substring(0, min);
+    }
 
     // 4. Binary search
+    public String longestCommonPrefix5(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        int minLen = Integer.MAX_VALUE;
+        for (String str : strs) {
+            minLen = Math.min(minLen, str.length());
+        }
+
+        int low = 1, high = minLen;
+        while (low <= high) {
+            int middle = (low + high) / 2;
+            if (isCommonPrefix(strs, middle)) {
+                low = middle + 1;
+            } else {
+                high = middle - 1;
+            }
+        }
+        return strs[0].substring(0, (low + high) / 2);
+    }
+
+    private boolean isCommonPrefix(String[] strs, int len) {
+        String str1 = strs[0].substring(0, len);
+        for (int i = 1; i < strs.length; i++) {
+            if (!strs[i].startsWith(str1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // 5. Trie
 }
