@@ -14,17 +14,17 @@ public class Solution {
         Solution solution = new Solution();
     }
 
-    // 1. DFS : 1) Get max depth, 2) Sum
+    private int getMaxDepth(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Math.max(getMaxDepth(root.right), getMaxDepth(root.left));
+    }
+
+    // 1. DFS : 1) Find max depth, 2) Get sum at max depth
     private int deepestLeavesSum(TreeNode root) {
-        int maxDepth = depth(root);
+        int maxDepth = getMaxDepth(root);
         int[] res = {0};
         findSum(root, maxDepth, 1, res);
         return res[0];
-    }
-
-    private int depth(TreeNode root) {
-        if (root == null) return 0;
-        return 1 + Math.max(depth(root.left), depth(root.right));
     }
 
     private void findSum(TreeNode root, int maxDepth, int currentDepth, int[] res) {
@@ -37,11 +37,6 @@ public class Solution {
     }
 
     // 2. Recursion
-    private int getDepth(TreeNode root) {
-        if (root == null) return 0;
-        return 1 + Math.max(getDepth(root.right), getDepth(root.left));
-    }
-
     private int getSumAtLevel(TreeNode root, int level) {
         if (root == null) return 0;
         if (level == 1) return root.val;
@@ -49,7 +44,7 @@ public class Solution {
     }
 
     private int deepestLeavesSum2(TreeNode root) {
-        int depth = getDepth(root);
-        return getSumAtLevel(root, depth);
+        int maxDepth = getMaxDepth(root);
+        return getSumAtLevel(root, maxDepth);
     }
 }
