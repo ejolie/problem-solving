@@ -25,7 +25,6 @@ public class Solution {
         System.out.println(solution.rangeSumBST(root, L, R));
     }
 
-    // TODO: Unserstanding
     // 1. DFS (Recursive)
     public int rangeSumBST(TreeNode root, int L, int R) {
         ans = 0;
@@ -66,9 +65,7 @@ public class Solution {
 
     // 3. Traverse (Recursive) for BST
     public int rangeSumBST3(TreeNode root, int L, int R) {
-        if (root == null)
-            return 0;
-
+        if (root == null) return 0;
         int sum = 0;
         if (L <= root.val && root.val <= R)
             sum += root.val;
@@ -81,11 +78,8 @@ public class Solution {
 
     // 4. Traverse (Recursive)
     public int rangeSumBST4(TreeNode root, int L, int R) {
-        if (root == null)
-            return 0;
-
+        if (root == null) return 0;
         int sum = rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R);
-
         if (L <= root.val && root.val <= R)
             return sum + root.val;
         else
