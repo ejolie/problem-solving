@@ -7,10 +7,10 @@ public class pg_60057 {
     }
     
     public static int solution(String s) {
-        int len = s.length();
+        int len = s.length(), lim = len / 2;
         String minString = s;
 
-        for (int n = 1; n <= len; n++) {
+        for (int n = 1; n <= lim; n++) {
             StringBuffer sb = new StringBuffer();
             String prev = s.substring(0, n), next = "";
             int prevCnt = 0, i = 0;
