@@ -1,5 +1,7 @@
 package com.ejolie.challenge._30days;
+
 import java.util.Arrays;
+
 /**
  * Day1. Single Number
  */
