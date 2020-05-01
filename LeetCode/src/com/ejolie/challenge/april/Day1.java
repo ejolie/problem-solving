@@ -1,4 +1,4 @@
-package com.ejolie.challenge.april30days;
+package com.ejolie.challenge.april;
 
 import java.util.Arrays;
 

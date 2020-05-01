@@ -1,4 +1,4 @@
-package com.ejolie.challenge.april30days;
+package com.ejolie.challenge.april;
 
 /**
  * Day9. Backspace String Compare
