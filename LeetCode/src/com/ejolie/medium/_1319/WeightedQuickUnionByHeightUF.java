@@ -124,3 +124,4 @@ public class WeightedQuickUnionByHeightUF {
         }
         count--;
     }
+}
