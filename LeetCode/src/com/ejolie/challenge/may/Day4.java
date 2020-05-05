@@ -6,7 +6,7 @@ package com.ejolie.challenge.may;
 public class Day4 {
     public static void main(String[] args) {
         int num = 38;
-        System.out.println(findComplement(num));
+        System.out.println(findComplement2(num));
     }
 
     /**
@@ -24,7 +24,12 @@ public class Day4 {
     }
 
     private static int findComplement2(int num) {
-        int mask = (Integer.highestOneBit(num) << 1) - 1;
+        /**
+         * `int mask = (Integer.highestOneBit(num) << 1) - 1;`
+         * We don't need to left shift 1.
+         * -> The highest 1 bit will always become 0 in the Complement result.
+         */
+        int mask = Integer.highestOneBit(num) - 1;
         num = ~num;
         return num & mask;
     }
