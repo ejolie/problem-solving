@@ -12,7 +12,7 @@ public class Solution {
         TreeNode right = new TreeNode(2, new TreeNode(3), null);
         TreeNode root = new TreeNode(1, null, right);
 
-        List<Integer> result = preorderTraversal3(root);
+        List<Integer> result = preorderTraversal2(root);
         for (int val : result) {
             System.out.println(val);
         }
@@ -32,7 +32,8 @@ public class Solution {
 
     // 2. Iterative
     public static List<Integer> preorderTraversal2(TreeNode root) {
-        List<Integer> nodes = new ArrayList<>();
+        List<Integer> nodes = new LinkedList<>();
+        if (root == null) return nodes;
         Stack<TreeNode> toVisit = new Stack<>();
         toVisit.push(root);
         while (!toVisit.isEmpty()) {
