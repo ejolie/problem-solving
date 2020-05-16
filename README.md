@@ -6,9 +6,9 @@
 ## 2. LeetCode
 
 ### Problems
-- [easy](LeetCode/src/com/ejolie/problems/easy)
-- [medium](LeetCode/src/com/ejolie/problems/medium)
-- [hard](LeetCode/src/com/ejolie/problems/hard)
+- [Easy](LeetCode/src/com/ejolie/problems/easy)
+- [Medium](LeetCode/src/com/ejolie/problems/medium)
+- [Hard](LeetCode/src/com/ejolie/problems/hard)
 
 ### Challenge
 - [May 31-Day Challenge](LeetCode/src/com/ejolie/challenge/may)
@@ -22,9 +22,9 @@
 - [Difficulty 6](SWEA/D6)
 
 ## 4. Hackerrank
-- [Interview-Preparation-Kit](Hackerrank/Interview-Preparation-Kit)
-- [Problem-Solving](Hackerrank/Problem-Solving)
-- [30-Days-of-Code](Hackerrank/30-Days-of-Code)
-- [10-Days-of-JavaScript](Hackerrank/10-Days-of-JavaScript)
+- [Interview Preparation Kit](Hackerrank/Interview-Preparation-Kit)
+- [Problem Solving](Hackerrank/Problem-Solving)
+- [30 Days of Code](Hackerrank/30-Days-of-Code)
+- [10 Days of JavaScript](Hackerrank/10-Days-of-JavaScript)
 
 ## 5. Programmers
