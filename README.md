@@ -1,23 +1,30 @@
 # 🔮 Algorithm Problem Solving
 알고리즘 문제 풀이를 정리합니다.
 
-## 1. [Baekjoon Online Judge](BOJ)
+## 1. Baekjoon Online Judge
 
-## 2. [SWEA](SWEA)
-### 1) [Difficulty 1](SWEA/D1)
-### 2) [Difficulty 2](SWEA/D2)
-### 3) [Difficulty 3](SWEA/D3)
-### 4) [Difficulty 4](SWEA/D4)
-### 5) [Difficulty 5](SWEA/D5)
-### 6) [Difficulty 6](SWEA/D6)
+## 2. LeetCode
 
-## 3. Hackerrank
-### 1) [Interview-Preparation-Kit](Hackerrank/Interview-Preparation-Kit)
-### 2) [Problem-Solving](Hackerrank/Problem-Solving)
-### 3) [30-Days-of-Code](Hackerrank/30-Days-of-Code)
-### 4) [10-Days-of-JavaScript](Hackerrank/10-Days-of-JavaScript)
+### Problems
+- [Easy](LeetCode/src/com/ejolie/problems/easy)
+- [Medium](LeetCode/src/com/ejolie/problems/medium)
+- [Hard](LeetCode/src/com/ejolie/problems/hard)
 
-## 4. Programmers
+### Challenge
+- [May 31-Day Challenge](LeetCode/src/com/ejolie/challenge/may)
 
-## 5. Goorm
-### 1) [Goorm EDU 알고리즘 문제해결기법 입문](Goorm/Introduction-To-Algorithm)
+## 3. SWEA
+- [Difficulty 1](SWEA/D1)
+- [Difficulty 2](SWEA/D2)
+- [Difficulty 3](SWEA/D3)
+- [Difficulty 4](SWEA/D4)
+- [Difficulty 5](SWEA/D5)
+- [Difficulty 6](SWEA/D6)
+
+## 4. Hackerrank
+- [Interview Preparation Kit](Hackerrank/Interview-Preparation-Kit)
+- [Problem Solving](Hackerrank/Problem-Solving)
+- [30 Days of Code](Hackerrank/30-Days-of-Code)
+- [10 Days of JavaScript](Hackerrank/10-Days-of-JavaScript)
+
+## 5. Programmers
