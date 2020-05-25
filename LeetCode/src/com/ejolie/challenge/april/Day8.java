@@ -1,6 +1,6 @@
 package com.ejolie.challenge.april;
 
-import com.ejolie.structure.ListNode;
+import com.ejolie.problems.structure.ListNode;
 
 /**
  * Day8. Middle of the Linked List
