@@ -1,6 +1,7 @@
 '''
 387. First Unique Character in a String
 '''
+import collections
 
 
 class Solution:
@@ -17,6 +18,14 @@ class Solution:
                 return i
         return -1
 
+    def firstUniqChar_pythonic(self, s: str) -> int:
+        count = collections.Counter(s)
+
+        for idx, ch in enumerate(s):
+            if count[ch] == 1:
+                return idx
+        return -1
+
 
 solution = Solution()
-print(solution.firstUniqChar("leetcode"))
+print(solution.firstUniqChar_pythonic("leetcode"))
