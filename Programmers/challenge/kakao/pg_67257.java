@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class pg_67257 {
 
-    private static final char[] OPS = { '+', '*', '-' };
+    private static final char[] OPS = {'+', '*', '-'};
     private static List<List<Character>> orders = new LinkedList<>();
     private static List<Long> nums = new LinkedList<>();
     private static List<Character> ops = new LinkedList<>();
@@ -47,6 +47,7 @@ public class pg_67257 {
     private static long calculate(List<Character> order, String expression) {
         List<Long> numsCopy = new LinkedList<>(nums);
         List<Character> opsCopy = new LinkedList<>(ops);
+
         for (int i = 0; i < order.size(); i++) {
             for (int j = 0; j < opsCopy.size(); j++) {
                 if (order.get(i) == opsCopy.get(j)) {
