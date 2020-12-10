@@ -1,2 +1,11 @@
+# Java
 *.class
-challenge/lgcns
+out/
+
+# IDE
+Programmers.iml
+.vscode/
+.idea/
+
+# Custom
+src/challenge/lgcns
