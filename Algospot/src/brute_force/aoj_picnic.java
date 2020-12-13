@@ -1,3 +1,5 @@
+package brute_force;
+
 import java.io.*;
 import java.util.*;
 
@@ -19,6 +21,7 @@ public class aoj_picnic {
 
     public static void main(String[] args) throws IOException {
         int cases = Integer.parseInt(br.readLine().trim());
+
         while (cases-- > 0) {
             StringTokenizer st = new StringTokenizer(br.readLine().trim());
             n = Integer.parseInt(st.nextToken());
