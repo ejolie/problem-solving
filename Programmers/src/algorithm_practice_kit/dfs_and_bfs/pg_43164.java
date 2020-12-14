@@ -1,4 +1,4 @@
-package algorithm_practice_kit.dfs_bfs;
+package algorithm_practice_kit.dfs_and_bfs;
 
 import java.util.*;
 

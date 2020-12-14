@@ -1,4 +1,4 @@
-package algorithm_practice_kit.stack_queue;
+package algorithm_practice_kit.stack_and_queue;
 
 import java.util.Queue;
 import java.util.LinkedList;
