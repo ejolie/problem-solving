@@ -33,10 +33,10 @@ public class aoj_quadtree {
     }
 
     /**
-     * 문자열을 4등분하여 상하로 뒤집는다.
+     * 문자열을 4등분하여 상하로 뒤집고 병합한다.
      *
-     * @param figure
-     * @param pos
+     * @param figure 입력 문자열
+     * @param pos    현재 검사중인 문자 위치
      * @return
      */
     public static String reverse(String figure, int pos) {
