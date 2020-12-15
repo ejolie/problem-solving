@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * 게임판 덮기
+ * 게임판 덮기 (난이도: 하)
  */
 public class aoj_boardcover {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

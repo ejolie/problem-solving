@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * 시계 맞추기
+ * 시계 맞추기 (난이도: 중)
  * <p>
  * 1. point
  * - 스위치를 누르는 순서는 중요하지 않다. -> 순서가 달라도 결과는 같다.
