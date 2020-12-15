@@ -1,0 +1,6 @@
+# Java
+out/
+
+# IntelliJ
+.idea/
+BOJ.iml
