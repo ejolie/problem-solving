@@ -18,15 +18,11 @@ public class aoj_jumpgame {
     public static void main(String[] args) throws IOException {
         int cases = Integer.parseInt(br.readLine().trim());
 
-        StringTokenizer st;
         while (cases-- > 0) {
             n = Integer.parseInt(br.readLine().trim());
-            board = new int[n][n];
-            memo = new int[n][n];
-            for (int[] row : memo) {
-                Arrays.fill(row, -1);
-            }
 
+            StringTokenizer st;
+            board = new int[n][n];
             for (int i = 0; i < n; i++) {
                 st = new StringTokenizer(br.readLine().trim());
                 for (int j = 0; j < n; j++) {
@@ -34,12 +30,17 @@ public class aoj_jumpgame {
                 }
             }
 
-            int answer = dp(0, 0);
+            memo = new int[n][n];
+            for (int[] row : memo) {
+                Arrays.fill(row, -1);
+            }
+
+            int answer = jump_dp(0, 0);
             System.out.println(answer == 1 ? "YES" : "NO");
         }
     }
 
-    public static int dp(int r, int c) {
+    public static int jump_dp(int r, int c) {
         // base case: 게임판 범위를 벗어나는 경우
         if (r >= n || c >= n) {
             return 0;
@@ -56,11 +57,11 @@ public class aoj_jumpgame {
         }
 
         int jumpSize = board[r][c];
-        memo[r][c] = Math.max(dp(r, c + jumpSize), dp(r + jumpSize, c));
+        memo[r][c] = Math.max(jump_dp(r, c + jumpSize), jump_dp(r + jumpSize, c));
         return memo[r][c];
     }
 
-    public static boolean bruteForce(int r, int c) {
+    public static boolean jump_bruteForce(int r, int c) {
         if (r >= n || c >= n) {
             return false;
         }
@@ -70,6 +71,6 @@ public class aoj_jumpgame {
         }
 
         int jumpSize = board[r][c];
-        return bruteForce(r, c + jumpSize) || bruteForce(r + jumpSize, c);
+        return jump_bruteForce(r, c + jumpSize) || jump_bruteForce(r + jumpSize, c);
     }
 }

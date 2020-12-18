@@ -27,13 +27,13 @@ public class aoj_wildcard {
                 filenames[i] = br.readLine().trim();
             }
 
-            memo = new int[101][101];
-            for (int[] m : memo) {
-                Arrays.fill(m, -1);
-            }
-
             List<String> answer = new LinkedList<>();
             for (String filename : filenames) {
+                memo = new int[101][101];
+                for (int[] m : memo) {
+                    Arrays.fill(m, -1);
+                }
+
                 if (doesMatch_memoized(pattern, filename, 0, 0)) {
                     answer.add(filename);
                 }
@@ -92,10 +92,10 @@ public class aoj_wildcard {
         }
 
         // w[wpos]와 s[spos]를 맞춰나간다.
-        if (wpos < w.length() && spos < s.length()
+        while (wpos < w.length() && spos < s.length()
                 && (w.charAt(wpos) == s.charAt(spos) || w.charAt(wpos) == '?')) {
-            memo[wpos][spos] = doesMatch_memoized(w, s, wpos + 1, spos + 1) ? 1 : 0;
-            return memo[wpos][spos] == 1;
+            wpos++;
+            spos++;
         }
 
         // case 2. w 끝에 도달해서 끝난 경우: 문자열도 끝났어야 대응됨
@@ -106,10 +106,11 @@ public class aoj_wildcard {
 
         // case 4. *를 만나서 끝난 경우: *에 몇 글자가 대응되는지 재귀 호출하면서 확인한다.
         if (w.charAt(wpos) == '*') {
-            if (doesMatch_memoized(w, s, wpos + 1, spos)
-                    || (spos < s.length() && doesMatch_memoized(w, s, wpos, spos + 1))) {
-                memo[wpos][spos] = 1;
-                return true;
+            for (int skip = 0; skip + spos <= s.length(); skip++) {
+                if (doesMatch_memoized(w, s, wpos + 1, spos + skip)) {
+                    memo[wpos][spos] = 1;
+                    return true;
+                }
             }
         }
 
