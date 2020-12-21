@@ -3,6 +3,7 @@ package algorithm_practice_kit.brute_force;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * 소수 찾기
@@ -10,28 +11,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class pg_42839 {
 
     public static void main(String[] args) {
+        assertTrue(isPrime(2));
         assertEquals(3, solution("17"));
         assertEquals(2, solution("011"));
     }
 
+    // ================================ new ================================
     public static int solution(String numbers) {
         Set<Integer> primeSet = new HashSet<>();
-        List<Character> tempPrime = new LinkedList<>();
+        List<Character> tempNum = new LinkedList<>();
 
         for (int r = 1; r <= numbers.length(); r++) {
-            findPrime(numbers.toCharArray(), r, tempPrime, primeSet);
+            findPrime(numbers.toCharArray(), r, tempNum, primeSet);
         }
 
         return primeSet.size();
     }
 
-    private static void findPrime(char[] numbers, int r, List<Character> tempPrime, Set<Integer> primeSet) {
-        if (tempPrime.size() == r) {
+    private static void findPrime(char[] numbers, int r, List<Character> tempNum, Set<Integer> primeSet) {
+        if (tempNum.size() == r) {
             int num = 0;
-            for (char ch : tempPrime) {
+            for (char ch : tempNum) {
                 num *= 10;
                 num += ch - '0';
             }
+
             if (isPrime(num)) {
                 primeSet.add(num);
             }
@@ -44,12 +48,12 @@ public class pg_42839 {
                 continue;
             }
 
-            tempPrime.add(num);
+            tempNum.add(num);
             numbers[i] = '#';
 
-            findPrime(numbers, r, tempPrime, primeSet);
+            findPrime(numbers, r, tempNum, primeSet);
 
-            tempPrime.remove(tempPrime.size() - 1);
+            tempNum.remove(tempNum.size() - 1);
             numbers[i] = num;
         }
     }
@@ -59,7 +63,7 @@ public class pg_42839 {
             return false;
         }
 
-        for (int i = 2; i <= num / 2; i++) {
+        for (int i = 2; i * i <= num; i++) { // i <= Math.sqrt(num);
             if (num % i == 0) {
                 return false;
             }
@@ -70,22 +74,22 @@ public class pg_42839 {
 
     // ================================ old ================================
     public static int solution_old(String numbers) {
+        Set<Integer> primeSet = new HashSet<>();
         boolean[] visited = new boolean[numbers.length()];
-        Set<Integer> set = new HashSet<>();
 
         for (int r = 1; r <= numbers.length(); r++) {
-            findPrime_old(numbers.toCharArray(), "", r, 0, visited, set);
+            findPrime_old(numbers.toCharArray(), r, 0, visited, "", primeSet);
         }
 
-        return set.size();
+        return primeSet.size();
     }
 
-    private static void findPrime_old(char[] numbers, String num, int r, int depth, boolean[] visited,
-                                      Set<Integer> set) {
+    private static void findPrime_old(char[] numbers, int r, int depth, boolean[] visited, String tempNum, Set<Integer> primeSet) {
         if (r == depth) {
-            int intNum = Integer.parseInt(num);
+            int intNum = Integer.parseInt(tempNum);
+
             if (isPrime(intNum)) {
-                set.add(intNum);
+                primeSet.add(intNum);
             }
             return;
         }
@@ -96,7 +100,7 @@ public class pg_42839 {
             }
 
             visited[i] = true;
-            findPrime_old(numbers, num + numbers[i], r, depth + 1, visited, set);
+            findPrime_old(numbers, r, depth + 1, visited, tempNum + numbers[i], primeSet);
             visited[i] = false;
         }
     }
