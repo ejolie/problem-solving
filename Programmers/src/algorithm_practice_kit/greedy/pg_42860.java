@@ -22,16 +22,13 @@ public class pg_42860 {
         Arrays.fill(word, 'A');
 
         int operations = 0, currIndex = 0;
-        while (true) {
-            if (String.valueOf(word).equals(name)) {
-                break;
-            }
-
+        while (!String.valueOf(word).equals(name)) {
             // 1. up or down 결정
             char alphabet = name.charAt(currIndex);
             int up = alphabet - 'A';
             int down = 'Z' - alphabet + 1;
 
+            // up, down 중 더 적은 조작 횟수를 더함
             operations += Math.min(up, down);
             word[currIndex] = alphabet;
 
@@ -41,10 +38,12 @@ public class pg_42860 {
                 int left = ((currIndex - move) + N) % N;
 
                 if (word[right] != name.charAt(right)) {
+                    // 오른쪽 이동 시 먼저 발견 -> 오른쪽 이동이 더 적은 조작 횟수임
                     currIndex = right;
                     operations += move;
                     break;
                 } else if (word[left] != name.charAt(left)) {
+                    // 왼쪽 이동 시 먼저 발견 -> 왼쪽 이동이 더 적은 조작 횟수임
                     currIndex = left;
                     operations += move;
                     break;
