@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Day10. Create Sorted Array through Instructions
+ * TODO: Study Binary Index Tree, Segment Tree
  */
 public class Day10 {
     static int[] c;

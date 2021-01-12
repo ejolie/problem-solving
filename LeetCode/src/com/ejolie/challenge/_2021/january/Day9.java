@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Day9. Word Ladder
+ * TODO: Solve with Bidirectional BFS
  */
 public class Day9 {
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Day9 {
     public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Map<String, List<String>> map = new HashMap<>();
         wordList.add(beginWord);
-        
+
         for (String word1 : wordList) {
             for (String word2 : wordList) {
                 int count = 0;
