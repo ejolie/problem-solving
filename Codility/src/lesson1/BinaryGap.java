@@ -1,4 +1,6 @@
-class BinaryGap {
+package lesson1;
+
+public class BinaryGap {
     public int solution(int N) {
         String binaryString = Integer.toBinaryString(N);
         int maxLength = 0;
