@@ -12,4 +12,8 @@ public class FrogJmp {
         }
         return jumps;
     }
+
+    public int solution_ceiling(int X, int Y, int D) {
+        return (int) Math.ceil((Y - X) / (double) D);
+    }
 }
