@@ -1,4 +1,4 @@
-package challenge.monthly_code.season3;
+package challenge.monthly_code._2020.season3;
 
 public class Q1 {
 

@@ -1,4 +1,4 @@
-package challenge.monthly_code.season2;
+package challenge.monthly_code._2020.season2;
 
 import java.util.*;
 

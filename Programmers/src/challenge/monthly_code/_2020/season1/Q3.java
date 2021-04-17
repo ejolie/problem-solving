@@ -1,4 +1,4 @@
-package challenge.monthly_code.season1;
+package challenge.monthly_code._2020.season1;
 
 /**
  * 월간 코드 챌린지 시즌1(9월) - Q3
