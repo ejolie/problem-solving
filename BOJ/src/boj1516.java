@@ -4,7 +4,8 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 /**
- * 1415. 게임 개발
+ * 1516. 게임 개발
+ * - 임계경로
  */
 public class boj1516 {
 
